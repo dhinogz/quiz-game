@@ -39,8 +39,6 @@ func main() {
 	fileName := "problems.csv"
 	// TODO: Parse time_limit flag to limit quiz time (add a default quiz time limit) Goroutines are needed here
 
-	// TODO: Read CSV file
-	// CSV file contains question and answer columns
 	f, err := os.Open(fileName)
 	if err != nil {
 		log.Fatal(err)
@@ -55,14 +53,7 @@ func main() {
 
 	quizList := createQuizGame(data)
 
-	// TODO: Start IO
-	// User sees first question
-	// The program awaits the user's response
-	// When answered, next question is rendered, doesn't matter if right or wrong
-	// TODO: Keep track of user's score
-	// Initialize score
 	var score int
-
 	reader := bufio.NewReader(os.Stdin)
 	for _, q := range quizList {
 		fmt.Printf("Problem #%d: %s = ", q.Index, q.Question)
@@ -78,8 +69,5 @@ func main() {
 			score++
 		}
 	}
-
-	// TODO: Display user's score when done or if time limit is reached
 	fmt.Println(score)
-
 }

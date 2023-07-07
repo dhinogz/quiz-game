@@ -1,0 +1,4 @@
+- [ ] Refactor code
+- [ ] Add optional flag for custom filename
+- [ ] Add optional timer limit flag (goroutines are needed)
+- [ ] Let user answer again if input is an empty string
